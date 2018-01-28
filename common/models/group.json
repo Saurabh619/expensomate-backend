@@ -1,0 +1,70 @@
+{
+  "name": "Group",
+  "plural": "groups",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "ttl": 9000000000,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "members": {
+      "type": "hasMany",
+      "model": "Member",
+      "foreignKey": "",
+      "options": {}
+    },
+    "expenses": {
+      "type": "hasMany",
+      "model": "Expense",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Member"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__create__members"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__get__members"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__findById__members"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__create__members"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Expense",
+  "plural": "expenses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "reason": {
+      "type": "string",
+      "required": false
+    },
+    "recipt": {
+      "type": "string",
+      "required": false
+    },
+    "split": {
+      "type": "array",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "member": {
+      "type": "belongsTo",
+      "model": "Member",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

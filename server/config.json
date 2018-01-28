@@ -1,0 +1,23 @@
+{
+  "restApiRoot": "/api",
+  "host": "api.prv",
+  "port": 51880,
+  "remoting": {
+    "context": false,
+    "rest": {
+      "normalizeHttpPath": false,
+      "xml": false
+    },
+    "json": {
+      "strict": false,
+      "limit": "16mb"
+    },
+    "urlencoded": {
+      "extended": true,
+      "limit": "16mb"
+    },
+    "cors": false,
+    "handleErrors": false
+  },
+  "legacyExplorer": false
+}
